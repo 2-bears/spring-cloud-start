@@ -1,18 +1,18 @@
-### environment configuration:
+###environment configuration: ###
 in win7, config HOSTS file:  
 127.0.0.1 localhost1  
 127.0.0.1 localhost2  
 127.0.0.1 localhost3  
 simulate three nodes of the register server and provider server.  
 
-### description of the modules:
+###description of the modules:###
 **spring-cloud-start:** parent project of maven  
 **eureka-register-server:** maven module, a server include Eureka server as register center.   
 **service-provider:** maven module, a server include Eureka client as provider services.  
 **client-consumer:** maven module, simulate client using Feign, which connect to the register center to find provide service.Feign integrates Hystrix, it can implement fallback easy.  
 spring cloud encapsulate the service well,  all we need to do is to implement our bussiness requirement.  
 
-### test steps:
+###test steps:###
 - 1 **start register server:**  
    a. write 3 application.yml with suffix "-devserverN" (N=1,2,3), which configure different ports.  
    b. compile the service into jar packs.  
