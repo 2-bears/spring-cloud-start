@@ -1,0 +1,24 @@
+server:
+  port: 8001
+  
+security: 
+    basic: 
+        enable: true
+    user: 
+        name: admin
+        password: test    
+eureka:
+  instance:
+    hostname: localhost1
+  client:
+    #是否注册自身到eureka服务器
+    #register-with-eureka: false
+    #是否从eureka获取注册信息
+    #fetch-registry: false
+    service-url: 
+      #相互注册，组成一个集群
+      defaultZone: http://admin:test@localhost1:8001/eureka/,http://admin:test@localhost2:8002/eureka/,http://admin:test@localhost3:8003/eureka/
+spring:
+    application:
+        #服务名称
+        name: eureka-register-server

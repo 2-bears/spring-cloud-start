@@ -1,0 +1,13 @@
+server:
+  port: 19002
+ 
+spring:
+  application:
+    name: eureka-service-provider
+  
+eureka:
+  instance:
+    appname: ${spring.application.name}
+  client: 
+    service-url: 
+        defaultZone: http://admin:test@localhost1:8001/eureka/,http://admin:test@localhost2:8002/eureka/,http://admin:test@localhost3:8003/eureka/
