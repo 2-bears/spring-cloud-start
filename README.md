@@ -1,3 +1,8 @@
+### software list
+springboot 2.0+  
+spring cloud Finchley.RELEASE  
+jdk1.8+  
+
 ### environment configuration:
 in win7, config HOSTS file:  
 127.0.0.1 localhost1  
@@ -10,7 +15,9 @@ simulate three nodes of the register server and provider server.
 **eureka-register-server:** maven module, a server include Eureka server as register center.   
 **service-provider:** maven module, a server include Eureka client as provider services.  
 **client-consumer:** maven module, simulate client using Feign, which connect to the register center to find provide service.Feign integrates Hystrix, it can implement fallback easy.  
-spring cloud encapsulate the service well,  all we need to do is to implement our bussiness requirement.  
+spring cloud encapsulate the service well,  all we need to do is to implement our bussiness requirement.   
+**cloud-getway:** maven module, spring-cloud-getway (different as zuul, add in Finchley)
+    it  includes **Canary Testing** and **rate limit**
 
 ### test steps:
 - 1 **start register server:**  
